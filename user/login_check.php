@@ -1,0 +1,28 @@
+<?php 
+	if(empty($_POST["email_id"])||empty($_POST["password"])){
+		header("location:login.php?required=1");
+	}
+	else{
+		$email_id=$_POST["email_id"];
+		$password=$_POST["password"];
+		include("db.php");
+		$rs=mysqli_query($con,"select * from user_register where email_id='$email_id'");
+		if($r=mysqli_fetch_array($rs)){
+			if($r["password"]==$password){
+				if($r["status"]==0){
+					setcookie("user",$email_id,time()+3600);
+					header("location:user_profile.php");
+				}
+				else{
+					header("location:login.php?your_account_block_by_admin=1");
+				}
+			}
+			else{
+				header("location:login.php?invalid_password=1");
+			}
+		}
+		else{
+			header("location:login.php?not_registered=1");
+		}	
+	}
+ ?>		

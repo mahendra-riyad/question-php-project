@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#password").keyup(function(){
+                        
+                        var v=$("#password").val();
+                        $.post("strongpassword.php",{password:v},function(data){
+                            // if(data=="strong"){
+                            //  $("#strong").fadeIn(1000);
+                            //  $("#good").fadeOut(1000);
+                            //  $("#weak").fadeOut(1000);
+                            // }
+                            // else if(data=="good"){
+                            //  $("#strong").fadeOut(1000);
+                            //  $("#good").fadeIn(1000);
+                            //  $("#weak").fadeOut(1000);
+                            // }
+                            // else if(data=="weak"){
+                            //  $("#strong").fadeOut(1000);
+                            //  $("#good").fadeOut(1000);
+                            //  $("#weak").fadeIn(1000);
+                            // }
+                            // else{
+                            //  $("#strong").fadeOut(1000);
+                            //  $("#good").fadeOut(1000);
+                            //  $("#weak").fadeOut(1000);
+                            // }
+                            $("#msg").html(data);
+                        });
+                    });
+                });
+            </script>
+<style> 
+ul#stack {
+	position:fixed;
+	top:0px;
+	width:100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    background-color:#E6E6E6;
+}
+
+li#stack {
+    float: left;
+    position: sticky;
+    top: 0px;
+}
+
+li#stack a {
+    display: block;
+    color:#000000;
+    text-align: center;
+    padding: 15px 10px;
+    text-decoration:none;
+	background-color:#FFFFFF;
+    border-bottom: 1px groove green;
+}
+li#stack a:hover {
+    background-color:#3366FF;
+} 
+.col-md-2 a{
+background-color:#F8F8F8;
+color:#333333;
+width:100%;
+ position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+.col-md-2 a:hover{
+background-color:#7DBEFF;
+}
+</style>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+input[type=text],select,text {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+input[type=email],select,text {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+input[type=password],select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+	color:#FFFFFF;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color:#0000FF;
+    padding: 20px;
+	width:100%;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+</style>
+<style>
+a:link#sign {
+    background-color:#0099FF;
+    color:#FFFFFF;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+	margin-top:8px;
+}
+</style>
+<style>
+.col-md-2 a:hover{
+background-color:#7DBEFF;
+}
+</style>
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+	border:none;
+}
+ td {
+    text-align:left;
+    padding: 8px;
+}
+
+
+
+th {
+    background-color:#0033FF;
+    color: white;
+	text-align:center;
+}
+</style>
+<style>
+.search {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #0099FF;
+  margin-bottom: 0px;
+  box-shadow:1px 2px 2px 1px #0099FF;
+}
+</style>
+</head>
+<body style="background-color:#F8F8F8">
+    <div class="w3-top">
+  <div class="w3-bar w3-red">
+  	<ul id="stack">
+  <li id="stack" style="padding-left:20px;"><p style="text-align:center; font-family:Georgia; font-size:36px; color:black;" >Q<b style="color:#0000FF;">uestion</b></p></li>
+  <li id="stack" style="float:right;"><a href="sign.php" id="sign" style="background-color:#6699FF;" class="btn btn-default">Sign Up</a></li>
+  <li id="stack" style="float:right;"><a href="login.php" class="btn btn-default" id="sign" style="border:none; background-color:#E6E6E6; color:#3366FF;"> Login</a></li>
+</ul> </div></div>
+<div class="container-fluid" >
+<div class="row" style="height:500px; background-color:#0071E1;">
+<div class="col-sm-1"></div>
+<div class="col-sm-4" style="margin-top:170px;">
+<b style="color:#FFFFFF; font-size:36px; font-family:Georgia, "Times New Roman", Times, serif">Learn ,Share ,Build</b>
+<p style="padding-top:30px; font-size:18px; color:#FFFFFF;">Each month, over 50 million developers come to Question to learn, share their knowledge, and build their careers.</p>
+<p style="padding-top:20px; font-size:18px; color:#FFFFFF;">Join the world's largest developer community.</p>
+</div>
+<div class="col-sm-1"></div>
+<div class="col-sm-5">
+<div class="container" style="margin-top:170px;">
+<form method="post" action="insert.php"  >
+	<div class="row">
+      <div class="col-25">
+        <label for="fname" >User Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="user_name" placeholder="Your name..">
+      </div>
+    </div>
+	<div class="row">
+      <div class="col-25">
+	  <label for="fname">Email Id</label>
+	  </div>
+	  <div class="col-75">
+	 <input type="email" name="email_id" id="fname" placeholder="Enter email">
+	 </div>
+	</div>
+	 <div class="row">
+      <div class="col-25"><label for="password">Password </label></div>
+	  <div class="col-75">
+	<input type="password" name="password"  placeholder="Enter password" id="password">
+        <span id="msg"></span></div></div>
+	<div class="row">
+<input type="submit" value="Sign Up">	</div>
+</form></div></div></div>
+</div>
+
+<div class="row">
+	<div class="col-md-2">
+		<div class="list-group">
+		<a href="display.php" class="list-group-item list-group--item-action" style="margin-top:0px; padding-left:20px; background-color:#3366FF; color:#FFFFFF; width:240px;">Home</a>
+		<a href="ask.php" class="list-group-item list-group--item-action" style=" padding-left:20px;width:240px;">Ask question</a>
+		<a href="user.php" class="list-group-item list-group--item-action" style="padding-left:20px;width:240px;">User</a>
+		</div>
+	</div>
+    <div class="card border-secondary col-md-9" style="border:1px #00CCCC groove; margin-top:0px; background-color:#FFFFFF; border-color:#CCCCCC;">
+        <table class="table table-responsive">
+		<p style="margin:10px; word-spacing:4px; letter-spacing:2px;">search any question</p>
+		<h1>
+       <input id="myInput" type="text" placeholder="Enter question ....." class="search"></h1>
+		<table class="table table-responsive">
+		<?php
+		include("db.php");	
+		$aa=mysqli_query($con,"select * from question");
+		while($a=mysqli_fetch_array($aa)){
+?>  
+		<tbody id="myTable"><tr><td>
+	<?php $pp=mysqli_query($con,"select * from answer where question='$a[4]'");
+			$num_rows=mysqli_num_rows($pp);
+			if(($num_rows)>0){
+		?>	<a href="display_see_answer.php?id=<?=$a[1]?>"><button class="btn btn-default" style="margin-top:10px; border-color:#009900;"><?=$num_rows?><br> Answer</button></a>
+		<?php }
+		 else{
+		?>		
+		<a href="display_see_answer.php?id=<?=$a[1]?>"><button class="btn btn-default" style="margin-top:10px; border:none;"><?=$num_rows?><br> Answer</button></a>
+		<?php
+				}
+	?>
+		</td><td><a href="#"><button class="btn btn-default" style="margin-top:10px; border:none;"><?=$a[6]?><br>View</button></a>
+	
+		</td>
+		<?php 		$qq=mysqli_query($con,"select * from question_like where (question_code='$a[1]') AND status=0");
+				$count = mysqli_num_rows($qq);
+			?>	
+				<td><p style="text-align:center; margin-top:10px;"><a href="sign.php"><button style="border:1px groove green; border-radius:6px; background-color:#FFFFFF; color:#006666;"><b style="font-size:16px; color:#00CC66;"><?=$count?></b> Like</button> </p>
+                    
+        <?php       $qq=mysqli_query($con,"select * from question_dislike where (question_code='$a[1]') AND status=0");
+                $count = mysqli_num_rows($qq);
+                ?><p style="text-align:center; margin-top:10px;"><a href="sign.php"><button style="border:1px groove red; border-radius:6px; background-color:#FFFFFF; color:#006666;"><b style="font-size:16px; color:#00CC66;"><?=$count?></b> Dislike</button> </p>
+				</td>
+		
+		<td style="font-size:24px; color:black; font-family:bold" colspan="4">
+           <?=$a[4]?>
+            <br>
+<?php 		$rs=mysqli_query($con,"select * from user_question where full_description='$a[4]'");
+			while($r=mysqli_fetch_array($rs)){
+				$qq=mysqli_query($con,"select * from admin_category where category='$r[3]'");
+				if($q=mysqli_fetch_array($qq)){
+?>				<a href="category_question.php?id=<?=$q[1]?>"><button style="background-color:#99CCFF; font-size:18px;border-radius: 4px;" ><?=$r[3]?></button></a>
+		
+<?php			}
+			}?></td><td><a href="sign.php?if_answer_submit_than_sign_up_first=1"> &nbsp;<button class="btn btn-danger" style="margin-top:17px;">Give Answer</button></a></td></tr></tbody>
+<?php	}?>
+		</table></div>
+		 <div class="card border-secondary col-md-1" style="border:hidden; margin-top:0px; background-color:#FFFFFF;">
+		 <p style="margin-top:30px; font-family:Courier; font-size:24px;"><b></b></p>
+		 
+	</div>
+		</div></div>
+		<div class="row" style="height:100px; background-color:#666666;"> 
+		<p style="margin-left:20px; color:#0099FF; word-spacing:4px; letter-spacing:2px; font-size:18px; font-family:'Times New Roman', Times, serif; margin-top:20px;"><a href="display.php" style="text-decoration:none;">Question</a></p>
+       <b style="margin-left:20px; color:#FFFFFF; word-spacing:4px; letter-spacing:2px; font-size:18px; font-family:'Times New Roman', Times, serif; margin-top:20px;"> Passionatley created by MAHENDRA RIYAD</b></div>      
+        </div>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+	</body>
+</html>
